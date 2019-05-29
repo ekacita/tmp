@@ -41,7 +41,7 @@
 					<h3 class="text-center">Get started with Us</h3>
 					<p class="login-box-msg">Sign in to start your session</p>
 
-					<form action="<?php echo base_url().'index.php/login/auth'?>" method="post">
+					<form action="<?php echo base_url().'login'?>" method="post">
 					  <div class="form-group has-feedback">
 						<input type="username" class="form-control rounded" placeholder="Username" name="username">
 						<span class="ion ion-email form-control-feedback"></span>

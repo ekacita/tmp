@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access alollowd');
 
-class Log extends CI_Controller
+class Login extends CI_Controller
 {
     function index()
     {
@@ -13,7 +13,7 @@ class Log extends CI_Controller
         if (isset($_POST["login"])) {
             $username = $this->input->post("username");
             $password = md5($this->input->post("password"));
-            $query = $this->db->query("SELECT * FROM `master_user` WHERE username = '$username' AND password='$password'");
+            $query = $this->db->query("SELECT * FROM 'master_user' WHERE username = '$username' AND password='$password'");
             if ($query->num_rows() > 0) {
                 $tmp = $query->result_array();
                 $_SESSION['nama'] = $tmp['3'];
