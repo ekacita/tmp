@@ -43,6 +43,18 @@
 <div class="wrapper">
 
   <header class="main-header">
+      <a href="../../index.html" class="logo">
+          <!-- mini logo -->
+          <b class="logo-mini">
+              <span class="light-logo"><img src="<?php echo base_url()?>assets/images/logo-light.png" alt="logo"></span>
+              <span class="dark-logo"><img src="<?php echo base_url()?>assets/images/logo-dark.png" alt="logo"></span>
+          </b>
+          <!-- logo-->
+          <span class="logo-lg">
+		  <img src="<?php echo base_url()?>assets/images/logo-light-text.png" alt="logo" class="light-logo">
+	  	  <img src="<?php echo base_url()?>assets/images/logo-dark-text.png" alt="logo" class="dark-logo">
+	  </span>
+      </a>
   </header>
 
   <!-- Left side column. contains the logo and sidebar -->
@@ -300,6 +312,12 @@
     <script src="<?php echo base_url()?>assets/vendor_components/jvectormap/lib2/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="<?php echo base_url()?>assets/vendor_components/jvectormap/lib2/jquery-jvectormap-world-mill-en.js"></script>
     <script src="<?php echo base_url()?>assets/vendor_components/jvectormap/lib2/jquery-jvectormap-us-aea-en.js"></script>
+<!-- This is data table -->
+    <script src="<?php echo base_url()?>assets/vendor_components/datatable/datatables.min.js"></script>
+
+    <!-- Fab Admin for Data Table -->
+    <script src="<?php echo base_url()?>assets/js/pages/data-table.js"></script>
+
 
 </body>
 </html>
