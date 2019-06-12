@@ -97,12 +97,13 @@
               <i class="fa fa-angle-right pull-right"></i>
             </span>
             </a>
+            <!-- MENU MASTER-->
             <ul class="treeview-menu">
                 <li><a href="pages/box/advanced.html"><i class="fa fa-circle-thin"></i>Kelompok Barang</a></li>
                 <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Master Barang</a></li>
                 <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Master Gudang</a></li>
                 <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Master Suplier</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Master Pelanggan</a></li>
+                <li><a href="pelanggan"><i class="fa fa-circle-thin"></i>Master Pelanggan</a></li>
                 <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Master Tipe Pbyr</a></li>
                 <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Data Pengguna</a></li>
                 <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Setting</a></li>

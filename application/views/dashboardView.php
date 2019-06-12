@@ -46,13 +46,13 @@
       <a href="../../index.html" class="logo">
           <!-- mini logo -->
           <b class="logo-mini">
-              <span class="light-logo"><img src="<?php echo base_url()?>assets/images/logo-light.png" alt="logo"></span>
-              <span class="dark-logo"><img src="<?php echo base_url()?>assets/images/logo-dark.png" alt="logo"></span>
+              <span class="light-logo"><img src="<?php echo base_url()?>assets/images/pos.png" alt="logo"></span>
+              <span class="dark-logo"><img src="<?php echo base_url()?>assets/images/pos.png" alt="logo"></span>
           </b>
           <!-- logo-->
           <span class="logo-lg">
-		  <img src="<?php echo base_url()?>assets/images/logo-light-text.png" alt="logo" class="light-logo">
-	  	  <img src="<?php echo base_url()?>assets/images/logo-dark-text.png" alt="logo" class="dark-logo">
+		  <img src="<?php echo base_url()?>assets/images/pos.png" alt="logo" class="light-logo">
+	  	  <img src="<?php echo base_url()?>assets/images/pos.png" alt="logo" class="dark-logo">
 	  </span>
       </a>
   </header>
@@ -62,7 +62,7 @@
     <!-- sidebar-->
       <?php $this->load->view("_partial/1_menu.php") ?>
   </aside>
-        <?php $this->load->view("_partial/breadcrump.php")?>
+        <?php $this->load->view("_partial/pelanggan.php")?>
   <footer class="main-footer">
     <div class="pull-right d-none d-sm-inline-block">
         <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">

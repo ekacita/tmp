@@ -1,35 +1,64 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access alollowd');
+class Login extends CI_Controller{
+    function __construct(){
+        parent::__construct();
+        $this->load->model('loginModel');
+    }
 
-class Login extends CI_Controller
-{
-    function index()
-    {
-        if (!isset($_SESSION)) {
-            session_start();
-        }
+    function index(){
+        $this->load->view('loginView');
+    }
 
-        if (isset($_POST["login"])) {
-            $username = $this->input->post("username");
-            $password = md5($this->input->post("password"));
-            $query = $this->db->query("SELECT * FROM 'master_user' WHERE username = '$username' AND password='$password'");
-            if ($query->num_rows() > 0) {
-                $tmp = $query->result_array();
-                $_SESSION['nama'] = $tmp['3'];
-                $_SESSION['username'] = $tmp['0'];
-                $_SESSION['id_gudang'] = $tmp['4'];
-                $_SESSION['level'] = $tmp['5'];
+    function auth(){
+        $username    = $this->input->post('username',TRUE);
+        $password = $this->input->post('password',TRUE);
+        $validate = $this->login_model->validate($username,$password);
+        if($validate->num_rows() > 0){
+            $data  = $validate->row_array();
+            $name  = $data['nama'];
+            $username = $data['username'];
+            $level = $data['level'];
+            $sesdata = array(
+                'nama'  => $name,
+                'username'  => $username,
+                'level'     => $level,
+                'logged_in' => TRUE
+            );
+            $this->session->set_userdata($sesdata);
+            // access login for admin
+            if($level === '1'){
+                redirect('page');
 
-            } else {
-                $this->session->set_flashdata;
+                // access login for sales
+            }elseif($level === '2'){
+                redirect('page/admin');
+
+                // access login for author
+            }elseif($level === '3'){
+                redirect('page/head');
+
+                // access login for author
+            }elseif($level === '4'){
+                redirect('page/gudang');
+
+                // access login for author
+            }elseif($level === '5'){
+                redirect('page/finance');
+
+                // access login for author
+            }else{
+                redirect('page/super');
             }
+        }else{
+            echo $this->session->set_flashdata('msg','Username or Password is Wrong');
+            redirect('login');
         }
-        if (isset($_SESSION['username'])) {
+    }
 
-        } else {
-            $this->load->view('loginView');
-        }
+    function logout(){
+        $this->session->sess_destroy();
+        redirect('login');
     }
 
 }
