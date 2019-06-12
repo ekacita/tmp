@@ -1,7 +1,7 @@
 <?php
 
 
-class PelangganModel extends CI_Controller
+class PelangganModel extends CI_Model
 {
 
 }
