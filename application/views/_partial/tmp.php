@@ -4,7 +4,8 @@
             <div class="col-12">
                 <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Master Barang</h3>
+                    <h3 class="box-title">Master Barang </h3>
+                    <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Barang</a></div>
                 </div>
                 <div class="box-body">
                     <div class="table-responsive">
@@ -32,17 +33,18 @@
         </div>
     </section>
 </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         tampil_data_barang();	//pemanggilan fungsi tampil barang.
 
-        $('#mydata').dataTable();
+        $('#example1').dataTable();
 
         //fungsi tampil barang
         function tampil_data_barang(){
             $.ajax({
                 type  : 'ajax',
-                url   : '<?php echo base_url()?>index.php/barang/data_barang',
+                url   : '<?php echo base_url()?>/barang/data_barang',
                 async : false,
                 dataType : 'json',
                 success : function(data){
@@ -50,9 +52,13 @@
                     var i;
                     for(i=0; i<data.length; i++){
                         html += '<tr>'+
-                            '<td>'+data[i].barang_kode+'</td>'+
-                            '<td>'+data[i].barang_nama+'</td>'+
-                            '<td>'+data[i].barang_harga+'</td>'+
+                            '<td>'+data[i].id_bar+'</td>'+
+                            '<td>'+data[i].nama_bar+'</td>'+
+                            '<td>'+data[i].id_kel+'</td>'+
+                            '<td>'+data[i].harga_beli+'</td>'+
+                            '<td>'+data[i].harga_jual+'</td>'+
+                            '<td>'+data[i].reseller+'</td>'+
+                            '<td>'+data[i].status_bar+'</td>'+
                             '<td style="text-align:right;">'+
                             '<a href="javascript:;" class="btn btn-info btn-xs item_edit" data="'+data[i].barang_kode+'">Edit</a>'+' '+
                             '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].barang_kode+'">Hapus</a>'+
