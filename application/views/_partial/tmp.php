@@ -46,23 +46,51 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Kode Barang</label>
+                        <label class="control-label col-xs-3" >ID Barang</label>
                         <div class="col-xs-9">
-                            <input name="kobar" id="kode_barang" class="form-control" type="text" placeholder="Kode Barang" style="width:335px;" required>
+                            <input name="kode" id="kode" class="form-control" type="text" placeholder="Kode Barang" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-xs-3" >Nama Barang</label>
                         <div class="col-xs-9">
-                            <input name="nabar" id="nama_barang" class="form-control" type="text" placeholder="Nama Barang" style="width:335px;" required>
+                            <input name="nama" id="nama" class="form-control" type="text" placeholder="Nama Barang" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Harga</label>
+                        <label class="control-label col-xs-3" >ID Kelompok</label>
                         <div class="col-xs-9">
-                            <input name="harga" id="harga" class="form-control" type="text" placeholder="Harga" style="width:335px;" required>
+                            <input name="kel" id="kel" class="form-control" type="text" placeholder="Harga" style="width:335px;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" >Harga Beli</label>
+                        <div class="col-xs-9">
+                            <input name="beli" id="beli" class="form-control" type="text" placeholder="Harga Beli" style="width:335px;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xss-3" >Harga Jual</label>
+                        <div class="col-xs-9">
+                            <input name="jual" id="jual" class="form-control" type="text" placeholder="Harga Jual" style="width:335px;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" >Reseller</label>
+                        <div class="col-xs-9">
+                            <input name="seller" id="seller" class="form-control" type="text" placeholder="Reseller" style="width:335px;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" >Status Barang</label>
+                        <div class="col-xs-9">
+                            <input name="status" id="status" class="form-control" type="text" placeholder="Status Barang" style="width:335px;" required>
                         </div>
                     </div>
 
@@ -172,9 +200,9 @@
                             '<td>'+data[i].harga_jual+'</td>'+
                             '<td>'+data[i].reseller+'</td>'+
                             '<td>'+data[i].status_bar+'</td>'+
-                            '<td style="text-align:right;">'+
+                            '<td style="text-align:right">'+
                             '<a href="javascript:;" class="btn btn-info btn-xs item_edit" data="'+data[i].barang_kode+'">Edit</a>'+' '+
-                            '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].barang_kode+'">Hapus</a>'+
+                            '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id_bar+'">Hapus</a>'+
                             '</td>'+
                             '</tr>';
                     }
@@ -214,18 +242,26 @@
 
         //Simpan Barang
         $('#btn_simpan').on('click',function(){
-            var kobar=$('#kode_barang').val();
-            var nabar=$('#nama_barang').val();
-            var harga=$('#harga').val();
+            var kode=$('#kode').val();
+            var nama=$('#nama').val();
+            var kel=$('#kel').val();
+            var beli=$('#beli').val();
+            var jual=$('#jual').val();
+            var seller=$('#seller').val();
+            var status=$('#status').val()
             $.ajax({
                 type : "POST",
                 url  : "<?php echo base_url('index.php/barang/simpan_barang')?>",
                 dataType : "JSON",
-                data : {kobar:kobar , nabar:nabar, harga:harga},
+                data : {kode:kode , nama:nama, kel:kel, beli:beli, jual:jual, seller:seller, status:status},
                 success: function(data){
-                    $('[name="kobar"]').val("");
-                    $('[name="nabar"]').val("");
-                    $('[name="harga"]').val("");
+                    $('[name="kode"]').val("");
+                    $('[name="nama"]').val("");
+                    $('[name="kel"]').val("");
+                    $('[name="beli"]').val("");
+                    $('[name="jual"]').val("");
+                    $('[name="seller"]').val("");
+                    $('[name="status"]').val("");
                     $('#ModalaAdd').modal('hide');
                     tampil_data_barang();
                 }

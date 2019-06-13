@@ -16,7 +16,7 @@ class User extends CI_Controller
 
     function dataUser()
     {
-        $data = $this->userModel->user_list();
+        $data = $this->userModel->userList();
         echo json_encode($data);
     }
 
@@ -35,7 +35,7 @@ class User extends CI_Controller
         $nama = $this->input->post('nama');
         $gudang = $this->input->post('id_gudang');
         $level = $this->input->post('level');
-        $data = $this->barangModel->simpanUser($username, $email,
+        $data = $this->userModel->simpanUser($username, $email,
             $password, $nama, $gudang, $level);
         echo json_encode($data);
     }
@@ -48,7 +48,7 @@ class User extends CI_Controller
         $nama = $this->input->post('beli');
         $gudang = $this->input->post('jual');
         $level = $this->input->post('reseller');
-        $data = $this->barangModel->updateUSer($username, $email,
+        $data = $this->userModel->updateUSer($username, $email,
             $password, $nama, $gudang, $level);
         echo json_encode($data);
     }
@@ -56,7 +56,7 @@ class User extends CI_Controller
     function hapusUser()
     {
         $username = $this->input->post('username');
-        $data = $this->barangModel->hapusUser($username);
+        $data = $this->userModel->hapusUser($username);
         echo json_encode($data);
     }
 

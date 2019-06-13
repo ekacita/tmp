@@ -29,14 +29,14 @@ class Barang extends CI_Controller
 
     function simpan_barang()
     {
-        $kobar = $this->input->post('kobar');
-        $nabar = $this->input->post('nabar');
+        $kode = $this->input->post('kode');
+        $nama = $this->input->post('nama');
         $kel = $this->input->post('kel');
         $beli = $this->input->post('beli');
         $jual = $this->input->post('jual');
-        $reseller = $this->input->post('reseller');
+        $seller = $this->input->post('seller');
         $status = $this->input->post('status');
-        $data = $this->barangModel->simpan_barang($kobar, $nabar, $beli, $jual, $kel, $reseller, $status);
+        $data = $this->barangModel->simpan_barang($kode, $nama, $beli, $jual, $kel, $seller, $status);
         echo json_encode($data);
     }
 

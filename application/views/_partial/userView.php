@@ -4,7 +4,7 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Master Barang </h3>
+                        <h3 class="box-title">Master Pengguna</h3>
                         <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Barang</a></div>
                     </div>
                     <div class="box-body">
@@ -12,14 +12,11 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID Barang</th>
                                     <th>Nama</th>
-                                    <th>Kelompok</th>
-                                    <th>Harga Beli</th>
-                                    <th>Harga Jual</th>
-                                    <th>Reseller</th>
-                                    <th>Status</th>
-                                    <th style="text-align: right;">Aksi</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>ID Gudang</th>
+                                    <th>Level</th>
                                 </tr>
                                 </thead>
                                 <tbody id="show_data">
@@ -46,7 +43,7 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Kode Barang</label>
+                        <label class="control-label col-xs-3" >Nama</label>
                         <div class="col-xs-9">
                             <input name="kobar" id="kode_barang" class="form-control" type="text" placeholder="Kode Barang" style="width:335px;" required>
                         </div>
@@ -157,7 +154,7 @@
         function tampil_data_barang(){
             $.ajax({
                 type  : 'ajax',
-                url   : '<?php echo base_url()?>/barang/data_barang',
+                url   : '<?php echo base_url()?>/user/dataUser',
                 async : false,
                 dataType : 'json',
                 success : function(data){
@@ -165,16 +162,14 @@
                     var i;
                     for(i=0; i<data.length; i++){
                         html += '<tr>'+
-                            '<td>'+data[i].id_bar+'</td>'+
-                            '<td>'+data[i].nama_bar+'</td>'+
-                            '<td>'+data[i].id_kel+'</td>'+
-                            '<td>'+data[i].harga_beli+'</td>'+
-                            '<td>'+data[i].harga_jual+'</td>'+
-                            '<td>'+data[i].reseller+'</td>'+
-                            '<td>'+data[i].status_bar+'</td>'+
+                            '<td>'+data[i].nama+'</td>'+
+                            '<td>'+data[i].username+'</td>'+
+                            '<td>'+data[i].email+'</td>'+
+                            '<td>'+data[i].id_gudang+'</td>'+
+                            '<td>'+data[i].level+'</td>'+
                             '<td style="text-align:right;">'+
                             '<a href="javascript:;" class="btn btn-info btn-xs item_edit" data="'+data[i].barang_kode+'">Edit</a>'+' '+
-                            '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].barang_kode+'">Hapus</a>'+
+                            '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].username+'">Hapus</a>'+
                             '</td>'+
                             '</tr>';
                     }
@@ -189,7 +184,7 @@
             var id=$(this).attr('data');
             $.ajax({
                 type : "GET",
-                url  : "<?php echo base_url('index.php/barang/get_barang')?>",
+                url  : "<?php echo base_url('index.php/user/getUser')?>",
                 dataType : "JSON",
                 data : {id:id},
                 success: function(data){
@@ -259,7 +254,7 @@
             var kode=$('#textkode').val();
             $.ajax({
                 type : "POST",
-                url  : "<?php echo base_url('index.php/barang/hapus_barang')?>",
+                url  : "<?php echo base_url('index.php/user/hapusUser')?>",
                 dataType : "JSON",
                 data : {kode: kode},
                 success: function(data){

@@ -30,7 +30,7 @@ class BarangModel extends CI_Model{
     }
 
     function update_barang($kobar, $nabar, $beli, $jual, $kel, $reseller, $status){
-        $hasil=$this->db->query("UPDATE master_barang SET nama_bar='$nabar',id_kel='$$kel', harga_beli='$beli', harga_jual='$jual', reseller='$reseller', status_bar='$status' WHERE barang_kode='$kobar'");
+        $hasil=$this->db->query("UPDATE master_barang SET nama_bar='$nabar',id_kel='$kel', harga_beli='$beli', harga_jual='$jual', reseller='$reseller', status_bar='$status' WHERE id_bar='$kobar'");
         return $hasil;
     }
 
