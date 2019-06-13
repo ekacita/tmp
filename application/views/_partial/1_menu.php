@@ -99,14 +99,14 @@
             </a>
             <!-- MENU MASTER-->
             <ul class="treeview-menu">
-                <li><a href="pages/box/advanced.html"><i class="fa fa-circle-thin"></i>Kelompok Barang</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Master Barang</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Master Gudang</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Master Suplier</a></li>
+                <li><a href="kelompok"><i class="fa fa-circle-thin"></i>Kelompok Barang</a></li>
+                <li><a href="barang"><i class="fa fa-circle-thin"></i>Master Barang</a></li>
+                <li><a href="gudang"><i class="fa fa-circle-thin"></i>Master Gudang</a></li>
+                <li><a href="suplier"><i class="fa fa-circle-thin"></i>Master Suplier</a></li>
                 <li><a href="pelanggan"><i class="fa fa-circle-thin"></i>Master Pelanggan</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Master Tipe Pbyr</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Data Pengguna</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-thin"></i>Setting</a></li>
+                <li><a href="tipebayar"><i class="fa fa-circle-thin"></i>Master Tipe Pbyr</a></li>
+                <li><a href="user"><i class="fa fa-circle-thin"></i>Data Pengguna</a></li>
+                <li><a href="setting"><i class="fa fa-circle-thin"></i>Setting</a></li>
 
             </ul>
         </li> <!-- Master Data-->
