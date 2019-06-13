@@ -4,20 +4,20 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Master Barang </h3>
-                        <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Barang</a></div>
+                        <h3 class="box-title">Master Suplier</h3>
+                        <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Suplier</a></div>
                     </div>
                     <div class="box-body">
                         <div class="table-responsive">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID Barang</th>
+                                    <th>ID Suplier</th>
                                     <th>Nama</th>
-                                    <th>Kelompok</th>
-                                    <th>Harga Beli</th>
-                                    <th>Harga Jual</th>
-                                    <th>Reseller</th>
+                                    <th>Alamat</th>
+                                    <th>Kota</th>
+                                    <th>Email</th>
+                                    <th>Nomor Telepon</th>
                                     <th>Status</th>
                                     <th style="text-align: right;">Aksi</th>
                                 </tr>
@@ -185,7 +185,7 @@
         function tampil_data_barang(){
             $.ajax({
                 type  : 'ajax',
-                url   : '<?php echo base_url()?>/barang/data_barang',
+                url   : '<?php echo base_url()?>/suplier/dataSuplier',
                 async : false,
                 dataType : 'json',
                 success : function(data){
@@ -193,16 +193,16 @@
                     var i;
                     for(i=0; i<data.length; i++){
                         html += '<tr>'+
-                            '<td>'+data[i].id_bar+'</td>'+
-                            '<td>'+data[i].nama_bar+'</td>'+
-                            '<td>'+data[i].id_kel+'</td>'+
-                            '<td>'+data[i].harga_beli+'</td>'+
-                            '<td>'+data[i].harga_jual+'</td>'+
-                            '<td>'+data[i].reseller+'</td>'+
-                            '<td>'+data[i].status_bar+'</td>'+
+                            '<td>'+data[i].id_sup+'</td>'+
+                            '<td>'+data[i].nama_sup+'</td>'+
+                            '<td>'+data[i].alamat_sup+'</td>'+
+                            '<td>'+data[i].kota+'</td>'+
+                            '<td>'+data[i].email_sup+'</td>'+
+                            '<td>'+data[i].nomor_sup+'</td>'+
+                            '<td>'+data[i].status_sup+'</td>'+
                             '<td style="text-align:right">'+
-                            '<a href="javascript:;" class="btn btn-info btn-xs item_edit" data="'+data[i].barang_kode+'">Edit</a>'+' '+
-                            '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id_bar+'">Hapus</a>'+
+                            '<a href="javascript:;" class="btn btn-info btn-xs item_edit" data="'+data[i].id_sup+'">Edit</a>'+' '+
+                            '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id_sup+'">Hapus</a>'+
                             '</td>'+
                             '</tr>';
                     }
@@ -251,7 +251,7 @@
             var status=$('#status').val()
             $.ajax({
                 type : "POST",
-                url  : "<?php echo base_url('index.php/barang/simpan_barang')?>",
+                url  : "<?php echo base_url('index.php/suplier/simpanSuplier')?>",
                 dataType : "JSON",
                 data : {kode:kode , nama:nama, kel:kel, beli:beli, jual:jual, seller:seller, status:status},
                 success: function(data){
@@ -295,7 +295,7 @@
             var kode=$('#textkode').val();
             $.ajax({
                 type : "POST",
-                url  : "<?php echo base_url('index.php/barang/hapus_barang')?>",
+                url  : "<?php echo base_url('suplier/hapusSuplier')?>",
                 dataType : "JSON",
                 data : {kode: kode},
                 success: function(data){

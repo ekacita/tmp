@@ -3,7 +3,7 @@
     <!-- sidebar menu-->
     <ul class="sidebar-menu" data-widget="tree">
         <li class="active">
-            <a href="index.html">
+            <a href="<?php echo base_url()?>">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
         </li> 	<!-- Dashboard-->

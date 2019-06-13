@@ -11,7 +11,7 @@ class Barang extends CI_Controller
 
     function index()
     {
-        $this->template->load("template","_partial/tmp");
+        $this->template->load("template","_partial/barangView");
     }
 
     function data_barang()
