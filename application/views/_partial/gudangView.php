@@ -4,20 +4,16 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Master Barang </h3>
-                        <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Barang</a></div>
+                        <h3 class="box-title">Master Gudang </h3>
+                        <div class="pull-right"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Gudang</a></div>
                     </div>
                     <div class="box-body">
                         <div class="table-responsive">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID Barang</th>
-                                    <th>Nama</th>
-                                    <th>Kelompok</th>
-                                    <th>Harga Beli</th>
-                                    <th>Harga Jual</th>
-                                    <th>Reseller</th>
+                                    <th>ID Gudang</th>
+                                    <th>Nama Gudang</th>
                                     <th>Status</th>
                                     <th style="text-align: right;">Aksi</th>
                                 </tr>
@@ -40,57 +36,29 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 class="modal-title" id="myModalLabel">Tambah Barang</h3>
+                <h3 class="modal-title" id="myModalLabel">Tambah Gudang</h3>
             </div>
             <form class="form-horizontal">
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >ID Barang</label>
+                        <label class="control-label col-xs-3" >ID Gudang</label>
                         <div class="col-xs-9">
-                            <input name="kode" id="kode" class="form-control" type="text" placeholder="Kode Barang" style="width:335px;" required>
+                            <input name="kode" id="kode" class="form-control" type="text" placeholder="Kode Gudang" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Nama Barang</label>
+                        <label class="control-label col-xs-3" >Nama Gudang</label>
                         <div class="col-xs-9">
-                            <input name="nama" id="nama" class="form-control" type="text" placeholder="Nama Barang" style="width:335px;" required>
+                            <input name="nama" id="nama" class="form-control" type="text" placeholder="Nama Gudang" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >ID Kelompok</label>
+                        <label class="control-label col-xs-3" >Status Gudang</label>
                         <div class="col-xs-9">
-                            <input name="kel" id="kel" class="form-control" type="text" placeholder="Harga" style="width:335px;" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-xs-3" >Harga Beli</label>
-                        <div class="col-xs-9">
-                            <input name="beli" id="beli" class="form-control" type="text" placeholder="Harga Beli" style="width:335px;" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-xss-3" >Harga Jual</label>
-                        <div class="col-xs-9">
-                            <input name="jual" id="jual" class="form-control" type="text" placeholder="Harga Jual" style="width:335px;" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-xs-3" >Reseller</label>
-                        <div class="col-xs-9">
-                            <input name="seller" id="seller" class="form-control" type="text" placeholder="Reseller" style="width:335px;" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-xs-3" >Status Barang</label>
-                        <div class="col-xs-9">
-                            <input name="status" id="status" class="form-control" type="text" placeholder="Status Barang" style="width:335px;" required>
+                            <input name="status" id="status" class="form-control" type="text" placeholder="Status Gudang" style="width:335px;" required>
                         </div>
                     </div>
 
@@ -118,23 +86,23 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Kode Barang</label>
+                        <label class="control-label col-xs-3" >Kode Gudang</label>
                         <div class="col-xs-9">
                             <input name="kobar_edit" id="kode_barang2" class="form-control" type="text" placeholder="Kode Barang" style="width:335px;" readonly>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Nama Barang</label>
+                        <label class="control-label col-xs-3" >Nama Gudang</label>
                         <div class="col-xs-9">
-                            <input name="nabar_edit" id="nabar_edit" class="form-control" type="text" placeholder="Nama Barang" style="width:335px;" required>
+                            <input name="nabar_edit" id="nama_barang2" class="form-control" type="text" placeholder="Nama Barang" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Harga</label>
+                        <label class="control-label col-xs-3" >Status Gudang</label>
                         <div class="col-xs-9">
-                            <input name="harga_edit" id="harga_update" class="form-control" type="text" placeholder="Harga" style="width:335px;" required>
+                            <input name="harga_edit" id="harga2" class="form-control" type="text" placeholder="Harga" style="width:335px;" required>
                         </div>
                     </div>
 
@@ -149,7 +117,6 @@
     </div>
 </div>
 <!--END MODAL EDIT-->
-
 
 <!--MODAL HAPUS-->
 <div class="modal fade" id="ModalHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -186,7 +153,7 @@
         function tampil_data_barang(){
             $.ajax({
                 type  : 'ajax',
-                url   : '<?php echo base_url()?>/barang/data_barang',
+                url   : '<?php echo base_url()?>/gudang/data_gudang',
                 async : false,
                 dataType : 'json',
                 success : function(data){
@@ -194,16 +161,12 @@
                     var i;
                     for(i=0; i<data.length; i++){
                         html += '<tr>'+
-                            '<td>'+data[i].id_bar+'</td>'+
-                            '<td>'+data[i].nama_bar+'</td>'+
-                            '<td>'+data[i].id_kel+'</td>'+
-                            '<td>'+data[i].harga_beli+'</td>'+
-                            '<td>'+data[i].harga_jual+'</td>'+
-                            '<td>'+data[i].reseller+'</td>'+
-                            '<td>'+data[i].status_bar+'</td>'+
+                            '<td>'+data[i].id_gud+'</td>'+
+                            '<td>'+data[i].nama_gud+'</td>'+
+                            '<td>'+data[i].status_gud+'</td>'+
                             '<td style="text-align:right">'+
-                            '<a href="javascript:;" class="btn btn-info btn-xs item_edit" data="'+data[i].id_bar+'">Edit</a>'+' '+
-                            '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id_bar+'">Hapus</a>'+
+                            '<a href="javascript:;" class="btn btn-info btn-xs item_edit" data="'+data[i].id_gud+'">Edit</a>'+' '+
+                            '<a href="javascript:;" class="btn btn-danger btn-xs item_hapus" data="'+data[i].id_gud+'">Hapus</a>'+
                             '</td>'+
                             '</tr>';
                     }
@@ -215,18 +178,18 @@
 
         //GET UPDATE
         $('#show_data').on('click','.item_edit',function(){
-            var id=$(this).attr('data');
+            var id_gud=$(this).attr('data');
             $.ajax({
                 type : "GET",
-                url  : "<?php echo base_url('index.php/barang/get_barang')?>",
+                url  : "<?php echo base_url('gudang/get_gudang')?>",
                 dataType : "JSON",
-                data : {id:id},
+                data : {id:id_gud},
                 success: function(data){
-                    $.each(data,function(nama_bar, id_kel, harga_beli, harga_juak, reseller, status_bar){
+                    $.each(data,function(id_gud, nama_gud, status_gud){
                         $('#ModalaEdit').modal('show');
-                        $('[name="kode"]').val(data.barang_kode);
-                        $('[name="nama_bar"]').val(data.barang_nama);
-                        $('[name="harga_edit"]').val(data.barang_harga);
+                        $('[name="kode"]').val(data.id_gud);
+                        $('[name="nama"]').val(data.nama_gud);
+                        $('[name="status"]').val(data.status_gud);
                     });
                 }
             });
@@ -245,23 +208,15 @@
         $('#btn_simpan').on('click',function(){
             var kode=$('#kode').val();
             var nama=$('#nama').val();
-            var kel=$('#kel').val();
-            var beli=$('#beli').val();
-            var jual=$('#jual').val();
-            var seller=$('#seller').val();
             var status=$('#status').val()
             $.ajax({
                 type : "POST",
-                url  : "<?php echo base_url('index.php/barang/simpan_barang')?>",
+                url  : "<?php echo base_url('gudang/simpan_gudang')?>",
                 dataType : "JSON",
-                data : {kode:kode , nama:nama, kel:kel, beli:beli, jual:jual, seller:seller, status:status},
+                data : {kode:kode , nama:nama, status:status},
                 success: function(data){
                     $('[name="kode"]').val("");
                     $('[name="nama"]').val("");
-                    $('[name="kel"]').val("");
-                    $('[name="beli"]').val("");
-                    $('[name="jual"]').val("");
-                    $('[name="seller"]').val("");
                     $('[name="status"]').val("");
                     $('#ModalaAdd').modal('hide');
                     tampil_data_barang();
@@ -270,6 +225,9 @@
             return false;
         });
 
+
+
+
         //Update Barang
         $('#btn_update').on('click',function(){
             var kobar=$('#kode_barang2').val();
@@ -277,7 +235,7 @@
             var harga=$('#harga2').val();
             $.ajax({
                 type : "POST",
-                url  : "<?php echo base_url('index.php/barang/update_barang')?>",
+                url  : "<?php echo base_url('gudang/update_gudang')?>",
                 dataType : "JSON",
                 data : {kobar:kobar , nabar:nabar, harga:harga},
                 success: function(data){
@@ -296,7 +254,7 @@
             var kode=$('#textkode').val();
             $.ajax({
                 type : "POST",
-                url  : "<?php echo base_url('index.php/barang/hapus_barang')?>",
+                url  : "<?php echo base_url('index.php/gudang/hapus_gudang')?>",
                 dataType : "JSON",
                 data : {kode: kode},
                 success: function(data){
@@ -310,3 +268,4 @@
     });
 
 </script>
+<h1

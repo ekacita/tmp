@@ -28,6 +28,8 @@
     <!-- Morris charts -->
     <link rel="stylesheet" href="<?php echo base_url()?>assets/vendor_components/morris.js/morris.css">
 
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/jquery.dataTables.css'?>">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -316,7 +318,7 @@
 <script src="<?php echo base_url()?>assets/vendor_components/datatable/datatables.min.js"></script>
 
 <!-- Fab Admin for Data Table -->
-<script src="<?php echo base_url()?>assets/js/pages/data-table.js"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.dataTables.js'?>"></script>
 
 
 </body>
