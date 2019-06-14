@@ -118,23 +118,51 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Kode Barang</label>
+                        <label class="control-label col-xs-3" >ID Barang</label>
                         <div class="col-xs-9">
-                            <input name="kobar_edit" id="kode_barang2" class="form-control" type="text" placeholder="Kode Barang" style="width:335px;" readonly>
+                            <input name="id_barang" id="id_barang1" class="form-control" type="text" placeholder="Kode Barang" style="width:335px;" readonly>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-xs-3" >Nama Barang</label>
                         <div class="col-xs-9">
-                            <input name="nabar_edit" id="nabar_edit" class="form-control" type="text" placeholder="Nama Barang" style="width:335px;" required>
+                            <input name="nama_barang" id="nama_barang1" class="form-control" type="text" placeholder="Nama Barang" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Harga</label>
+                        <label class="control-label col-xs-3" >ID Barang</label>
                         <div class="col-xs-9">
-                            <input name="harga_edit" id="harga_update" class="form-control" type="text" placeholder="Harga" style="width:335px;" required>
+                            <input name="kelompok" id="kelompok1" class="form-control" type="text" placeholder="Kelompok Barang" style="width:335px;" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" >Harga Beli</label>
+                        <div class="col-xs-9">
+                            <input name="harga_beli" id="harga_beli1" class="form-control" type="text" placeholder="Harga Beli" style="width:335px;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" >Harga Jual</label>
+                        <div class="col-xs-9">
+                            <input name="harga_jual" id="harga_jual1" class="form-control" type="text" placeholder="Harga Jual" style="width:335px;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" >Harga Reseller</label>
+                        <div class="col-xs-9">
+                            <input name="reseller" id="reseller1" class="form-control" type="text" placeholder="Status" style="width:335px;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3">Status Barang</label>
+                        <div class="col-xs-9 ">
+                            <input name="status_barang" id="status_barang1" class="form-control" type="text" placeholder="Status Barang" style="width: 335px;" required>
                         </div>
                     </div>
 
@@ -222,11 +250,15 @@
                 dataType : "JSON",
                 data : {id:id},
                 success: function(data){
-                    $.each(data,function(nama_bar, id_kel, harga_beli, harga_juak, reseller, status_bar){
+                    $.each(data,function(id_bar, nama_bar, id_kel, harga_beli, harga_jual, reseller, status_bar){
                         $('#ModalaEdit').modal('show');
-                        $('[name="kode"]').val(data.barang_kode);
-                        $('[name="nama_bar"]').val(data.barang_nama);
-                        $('[name="harga_edit"]').val(data.barang_harga);
+                        $('[name="id_barang"]').val(data.id_bar);
+                        $('[name="nama_barang"]').val(data.nama_bar);
+                        $('[name="kelompok"]').val(data.id_kel);
+                        $('[name="harga_beli"]').val(data.harga_beli);
+                        $('[name="harga_beli"]').val(data.harga_jual);
+                        $('[name="reseller"]').val(data.reseller);
+                        $('[name="status_bar"]').val(data.status_bar);
                     });
                 }
             });
@@ -272,18 +304,26 @@
 
         //Update Barang
         $('#btn_update').on('click',function(){
-            var kobar=$('#kode_barang2').val();
-            var nabar=$('#nama_barang2').val();
-            var harga=$('#harga2').val();
+            var kobar=$('#id_barang1').val();
+            var nabar=$('#nama_barang1').val();
+            var kel=$('#kelompok1').val();
+            var beli=$('#harga_beli1').val();
+            var jual=$('#harga_jual1').val();
+            var seller=$('#reseller1').val();
+            var status=$('#status_barang1').val();
             $.ajax({
                 type : "POST",
                 url  : "<?php echo base_url('index.php/barang/update_barang')?>",
                 dataType : "JSON",
-                data : {kobar:kobar , nabar:nabar, harga:harga},
+                data : {kobar:kobar , nabar:nabar, kel:kel, beli:beli, jual:jual, seller:seller, status:status},
                 success: function(data){
-                    $('[name="kobar_edit"]').val("");
-                    $('[name="nabar_edit"]').val("");
-                    $('[name="harga_edit"]').val("");
+                    $('[name="id_barang"]').val("");
+                    $('[name="nama_barang"]').val("");
+                    $('[name="kelompok"]').val("");
+                    $('[name="harga_beli"]').val("");
+                    $('[name="harga_jual"]').val("");
+                    $('[name="reseller"]').val("");
+                    $('[name="status_barang"]').val("");
                     $('#ModalaEdit').modal('hide');
                     tampil_data_barang();
                 }
