@@ -22,41 +22,38 @@ class User extends CI_Controller
 
     function get_user()
     {
-        $kobar = $this->input->get('id');
-        $data = $this->userModel->get_user_by_kode($kobar);
+        $username = $this->input->get('id');
+        $data = $this->userModel->get_user_by_kode($username);
         echo json_encode($data);
     }
 
     function simpan_user()
     {
-        $kode = $this->input->post('kode');
+        $username = $this->input->post('username');
+        $email = $this->input->post('email');
+        $pass = $this->input->post('pass');
         $nama = $this->input->post('nama');
-        $kel = $this->input->post('kel');
-        $beli = $this->input->post('beli');
-        $jual = $this->input->post('jual');
-        $seller = $this->input->post('seller');
-        $status = $this->input->post('status');
-        $data = $this->barangModel->simpan_barang($kode, $nama, $beli, $jual, $kel, $seller, $status);
+        $gudang = $this->input->post('gudang');
+        $level = $this->input->post('level');
+        $data = $this->userModel->simpan_user($username, $email, $pass, $nama, $gudang, $level);
         echo json_encode($data);
     }
-ggit
     function update_user()
     {
-        $kobar = $this->input->post('kobar');
-        $nabar = $this->input->post('nabar');
-        $kel = $this->input->post('kel');
-        $beli = $this->input->post('beli');
-        $jual = $this->input->post('jual');
-        $reseller = $this->input->post('reseller');
-        $status = $this->input->post('status');
-        $data = $this->barangModel->update_barang($kobar, $nabar, $beli, $jual, $kel, $reseller, $status);
+        $username = $this->input->post('username');
+        $email = $this->input->post('email');
+        $pass = $this->input->post('pass');
+        $nama = $this->input->post('nama');
+        $gudang = $this->input->post('gudang');
+        $level = $this->input->post('level');
+        $data = $this->userModel->update_user($username, $email, $pass, $nama, $gudang, $level);
         echo json_encode($data);
     }
 
-    function hapus_barang()
+    function hapus_user()
     {
-        $kobar = $this->input->post('kode');
-        $data = $this->barangModel->hapus_barang($kobar);
+        $username = $this->input->post('kode');
+        $data = $this->userModel->hapus_user($username);
         echo json_encode($data);
     }
 
